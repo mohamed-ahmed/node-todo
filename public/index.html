@@ -24,6 +24,7 @@
 
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/services/repos.js"></script> <!-- load our todo service -->
 	<script src="js/core.js"></script> <!-- load our main application -->
 
 </head>
@@ -52,6 +53,12 @@
 				<p class="text-center" ng-show="loading">
 					<span class="fa fa-spinner fa-spin fa-3x"></span>
 				</p>
+
+				<div class="checkbox" ng-repeat="repo in repos">
+					<label>
+						<input type="checkbox" > {{ repo.name }}
+					</label>
+				</div>
 
 			</div>
 		</div>

@@ -8,15 +8,18 @@ module.exports = function(app) {
 	app.get('/api/todos', function(req, res) {
 
 		// use mongoose to get all todos in the database
-		/*Todo.find(function(err, todos) {
+		Todo.find(function(err, todos) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
 
 			res.json(todos); // return all todos in JSON format
-		});*/
-		/*modify this to send hardcoded git repos instead*/
+		});
+	});
+
+	app.get('/api/repos', function(req, res) {
+		/*send hardcoded git repos */
 
 		needle.get("https://api.github.com/users/mohamed-ahmed/repos", function(error,outgoingGetResponse){
 			console.log(outgoingGetResponse.body);
