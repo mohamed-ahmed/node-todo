@@ -28,6 +28,17 @@ module.exports = function(app) {
 
 	});
 
+	app.get('/api/repos/:repo_name', function(req, res) {
+		/*send hardcoded git repos */
+
+		var repo_name = req.params.repo_name;
+		needle.get("https://api.github.com/repos/mohamed-ahmed/" + repo_name, function(error,outgoingGetResponse){
+			console.log(outgoingGetResponse.body);
+			res.send(outgoingGetResponse.body);
+		});
+
+	});
+
 	// create todo and send back all todos after creation
 	app.post('/api/todos', function(req, res) {
 

@@ -1,13 +1,12 @@
-angular.module('repoService', [])
+angular.module('branchService', [])
 
 	// super simple service
 	// each function returns a promise object 
-	.factory('Repos', ['$http',function($http) {
+	.factory('Branches', ['$http',function($http) {
 		return {
-			get : function() {
-				return $http.get('/api/repos');
-			},
-			display : true
+			get : function(repo_name) {
+				return $http.get('/api/repos/' + repo_name);
+			}
 			/*,
 			create : function(todoData) {
 				return $http.post('/api/todos', todoData);
@@ -15,5 +14,6 @@ angular.module('repoService', [])
 			delete : function(id) {
 				return $http.delete('/api/todos/' + id);
 			}*/
+			
 		}
 	}]);

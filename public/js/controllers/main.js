@@ -4,6 +4,7 @@ angular.module('todoController', [])
 	.controller('mainController', ['$scope','$http','Todos', 'Repos', function($scope, $http, Todos, Repos) {
 		$scope.formData = {};
 		$scope.loading = true;
+		$scope.display = true;
 
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
@@ -53,4 +54,10 @@ angular.module('todoController', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
+
+		$scope.openBranch = function(repoName){
+			$scope.display = false;
+			Branches.get(repoName);
+		}
+
 	}]);
