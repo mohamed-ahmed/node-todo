@@ -1,1 +1,1 @@
-angular.module('scotchTodo', ['todoController', 'todoService', 'repoService']);
+angular.module('scotchTodo', ['todoController', 'todoService', 'repoService', 'branchService']);

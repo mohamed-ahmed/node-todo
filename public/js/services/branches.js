@@ -5,7 +5,7 @@ angular.module('branchService', [])
 	.factory('Branches', ['$http',function($http) {
 		return {
 			get : function(repo_name) {
-				return $http.get('/api/repos/' + repo_name);
+				return $http.get('/api/branches/' + repo_name);
 			}
 			/*,
 			create : function(todoData) {
@@ -14,6 +14,5 @@ angular.module('branchService', [])
 			delete : function(id) {
 				return $http.delete('/api/todos/' + id);
 			}*/
-			
 		}
 	}]);

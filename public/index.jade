@@ -21,6 +21,8 @@ html(ng-app="scotchTodo")
 		script(src="js/services/todos.js")
 		//- load our todo service
 		script(src="js/services/repos.js")
+		//- load our todo services
+		script(src="js/services/branches.js")
 		//- load our todo service
 		script(src="js/core.js")
 		//- load our main application
@@ -44,9 +46,11 @@ html(ng-app="scotchTodo")
 						span.fa.fa-spinner.fa-spin.fa-3x
 
 					.checkbox(ng-repeat="repo in repos")
-						a(ng-click="openBranch({{repo.name}})" ){{ repo.name }}
+						a(ng-click="openBranches(repo.name)"){{ repo.name }}
 
 			#branch-list.row
+				.div(ng-repeat="branch in branches").col-sm-4.col-sm-offset-4
+					a {{branch.name}}
 
 
 			//- FORM TO CREATE TODOS

@@ -1,7 +1,7 @@
 angular.module('todoController', [])
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos', 'Repos', function($scope, $http, Todos, Repos) {
+	.controller('mainController', ['$scope','$http','Todos', 'Repos', 'Branches', function($scope, $http, Todos, Repos, Branches) {
 		$scope.formData = {};
 		$scope.loading = true;
 		$scope.display = true;
@@ -55,9 +55,14 @@ angular.module('todoController', [])
 				});
 		};
 
-		$scope.openBranch = function(repoName){
-			$scope.display = false;
-			Branches.get(repoName);
+		$scope.openBranches = function(repoName){
+			console.log("clicked");
+			Branches.get(repoName)
+				.success(function (data){
+					console.log(data);
+					$scope.display = false;
+					$scope.branches = data;
+				});
 		}
 
 	}]);
