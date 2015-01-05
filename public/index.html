@@ -15,11 +15,8 @@
     <script src="js/core.js"></script>
   </head>
   <body ng-controller="mainController">
-    <div ng-include="'template1.html'"></div>
+    <div ng-include="template1.html"></div>
     <div class="container-fluid">
-      <div class="jumbotron text-center">
-        <h1>I&#39;m a Todo-aholic<span class="label label-info">{{ todos.length }}</span></h1>
-      </div>
       <div id="todo-list" ng-show="display == true" class="row">
         <div class="col-sm-4 col-sm-offset-4">
           <div ng-repeat="todo in todos" class="checkbox">
@@ -33,20 +30,6 @@
       </div>
       <div id="branch-list" class="row">
         <div ng-repeat="branch in branches" class="div col-sm-4 col-sm-offset-4"><a>{{branch.name}}</a></div>
-      </div>
-      <div id="todo-form" class="row">
-        <div class="col-sm-8 col-sm-offset-2 text-center">
-          <form>
-            <div class="form-group">
-              <input type="text" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text" class="form-control input-lg text-center">
-            </div>
-            <button type="submit" ng-click="createTodo()" class="btn btn-primary btn-lg">Add</button>
-          </form>
-        </div>
-      </div>
-      <div class="text-center text-muted">
-        <p>A demo by<a href="http://scotch.io">Scotch</a>.</p>
-        <p>Read the<a href="http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular">tutorial</a>.</p>
       </div>
     </div>
   </body>
